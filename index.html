@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS多文件上传插件</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+</head>
+<body>
+	<progress id="progressBar" value="0" max="100" style="width:100%;height:10px;"></progress><br><br>
+	<input type="file" multiple="multiple" name="file" id="file">
+	<input type="button" name="button" id="button" value="上传">
+<<<<<<< HEAD
+	<div id="num"></div>
+=======
+	<div id="progress"></div>
+>>>>>>> index.html
+
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/xinUpload.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#button').on('click', function(){
+		var ps = $('#progress');
+		$('#file').XinUpload({
+			url : '${drag}',
+			onProgress : function(value, total){
+				var progressBar = document.getElementById("progressBar");
+				progressBar.max = total;
+	    			progressBar.value = value;
+	    			var num = Math.round(value / total * 100);
+				if(num == 100){
+<<<<<<< HEAD
+					$('#num').html("上传完毕");
+	    			}else{
+	    				$('#num').html(num + "%");
+	    			}
+=======
+					ps.html("上传完毕");
+	    		}else{
+	    			ps.html(num + "%");
+	    		}
+>>>>>>> index.html
+			},
+			callback : function(msg){
+				alert(msg);
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>
