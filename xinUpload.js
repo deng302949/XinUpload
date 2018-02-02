@@ -1,6 +1,6 @@
 /*!
  * XinUpload 1.0
- * author : MrXinxi@163.com
+ * author : xinxisimple@163.com
  *
  */
 
